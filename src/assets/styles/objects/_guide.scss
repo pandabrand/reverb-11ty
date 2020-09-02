@@ -14,10 +14,16 @@
   }
   
   .location-container {
-    height: 80vh;
+    height: 85vh;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #1c1c1c;
     padding: 2rem;
+  }
+
+  .map-container {
+    margin-left: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
   }
 }

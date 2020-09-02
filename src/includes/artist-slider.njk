@@ -3,7 +3,7 @@
     {% for item in artists %}
       <div class="embla__slide">
         <img src="{{ item.img }}" width="341" height="210" alt="" srcset="{{ item.srcSet }}">
-        {{ item.title }}
+        <h3>{{ item.title }}</h3>
         <a href="{{ item.uri }}">View Curated Guide</a>
       </div>
     {% endfor %}
