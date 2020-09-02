@@ -5,7 +5,7 @@
   </div>
   <div class="location-container">
     {% for item in home.locations %}
-      <div class="card location">
+      <div id="{{ item.locationId }}" class="card location">
         <div class="img-container">
           {% imagehandler item.img, item.imgSrcSet, item.instagramImage %}
         </div>

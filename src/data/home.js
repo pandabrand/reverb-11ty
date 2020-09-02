@@ -35,6 +35,7 @@ module.exports = async function() {
 
       locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: "47336"}}}) {
         nodes {
+          locationId
           title
           excerpt
           featuredImage {
@@ -90,6 +91,7 @@ module.exports = async function() {
     let photoCredit = item.locationFieldGroup.photoCredit || '';
 
     return {
+      locationId: item.locationId,
       title: item.title,
       excerpt: item.excerpt,
       img: src,
