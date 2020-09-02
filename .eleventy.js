@@ -6,6 +6,10 @@ const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
+const image_handler = require('./utils/image_handler.js')
+const debug = require('debug')('reverb');
+
+require('dotenv').config();
 
 module.exports = function (config) {
     // Plugins
@@ -29,6 +33,9 @@ module.exports = function (config) {
 
     // Icon Sprite
     config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
+
+    // Image Handler
+    config.addNunjucksAsyncShortcode('imagehandler', image_handler)
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')

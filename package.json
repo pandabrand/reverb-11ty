@@ -4,9 +4,11 @@
   "description": "A boilerplate for eleventy websites",
   "scripts": {
     "start": "npm run dev",
+    "debug": "run-s clean eleventy:debug --print-label",
     "dev": "run-s clean eleventy:dev --print-label",
     "build": "run-s clean eleventy:prod --print-label",
     "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "eleventy:debug": "cross-env ELEVENTY_ENV=development DEBUG=Eleventy* eleventy --serve",
     "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
     "clean": "del-cli dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,10 +31,14 @@
     "critical": "^1.3.9",
     "cssesc": "^3.0.0",
     "del-cli": "^3.0.0",
+    "embla-carousel": "^4.0.1",
     "focus-trap": "^5.1.0",
     "focus-visible": "^5.1.0",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.0.0",
     "html-minifier": "^4.0.0",
     "luxon": "^1.23.0",
+    "mapbox-gl": "^1.12.0",
     "markdown-it": "^10.0.0",
     "memfs": "^3.1.2",
     "node-sass": "^4.13.1",
@@ -41,6 +47,7 @@
     "webpack": "^4.42.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0"
   }
 }

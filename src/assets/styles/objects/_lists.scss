@@ -1,0 +1,26 @@
+.link-list {
+  list-style: none;
+  display: flex;
+  margin: 0 auto;
+  width: max-content;
+  
+  li {
+    margin-right: 1rem;
+
+    a {
+      display: inline-block;
+      line-height: 1;
+      padding-right: 1rem;
+      border-right: solid 1px #ffffff;
+    }
+    
+    &:last-of-type {
+      margin-right: 0;
+
+      a {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+}

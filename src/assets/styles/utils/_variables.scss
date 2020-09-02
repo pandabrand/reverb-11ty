@@ -36,23 +36,23 @@ $gray-lightest: #f7f7f9;
 
 // Brand Colors
 
-$brand-red: #fc6767;
+$brand-teal: #34cad2;
 
 // Color Mappings
 
-$bg-color: #fff;
-$text-color: $gray-darkest;
-$brand-color-primary: $brand-red;
-$brand-color-primary-offset: darken($brand-red, 6%);
+$bg-color: #000;
+$text-color: $gray-lightest;
+$brand-color-primary: $brand-teal;
+$brand-color-primary-offset: darken($brand-teal, 6%);
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+$font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$font-family-serif: 'Times New Roman', Georgia, Times, serif;
+$font-family-serif: 'Vollkorn', 'Times New Roman', Georgia, Times, serif;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Andale Mono', 'Courier New',
     monospace;
 $font-family-base: $font-family-sans-serif;

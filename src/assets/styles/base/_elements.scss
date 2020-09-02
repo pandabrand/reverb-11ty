@@ -1,0 +1,19 @@
+a {
+  color: $brand-teal;
+
+  &:hover,
+  :active {
+    color: $brand-color-primary-offset;
+  }
+}
+
+img {
+  &.img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &.cover {
+    object-fit: cover;
+  }
+}

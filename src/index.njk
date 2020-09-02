@@ -4,6 +4,29 @@ eleventyNavigation:
   key: Home
 ---
 
-<div class="container">
-    <h1>A blank 11ty project.</h1>
+<div class="container home">
+  <div class="hero">
+    <img src="{{ '/assets/images/atlanta-hero.jpg' | url }}" alt="" class="img-fluid">
+    <h1 aria-role="title"><span class="top-line">Explore</span><br>Downtown Atlanta</h1>
+  </div>
+  <h1><span class="top-line">The Artists</span><br>Behind the Guide</h1>
+  <div class="card-row">
+    {% for item in home.artists %}
+      <div class="card">
+        <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
+        <h2>{{ item.title }}</h2>
+        <div class="body">{{ item.content | safe | truncate(200) }}</div>
+        <a href="{{ item.uri }}">+ Meet Artists</a>
+      </div>
+    {% endfor %}    
+    {% for item in home.vibe_managers %}
+      <div class="card">
+        <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
+        <h2>{{ item.title }}</h2>
+        <div>{{ item.content | safe | truncate(200) }}</div>
+        <a href="{{ item.uri }}">+ Meet Artists</a>
+      </div>
+    {% endfor %}    
+  </div>
+  {% include "home_map.njk" %}
 </div>

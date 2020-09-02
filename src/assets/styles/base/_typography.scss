@@ -9,9 +9,18 @@ h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 300;
     text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    
+    .top-line {
+        font-size: 2.4rem;
+        font-family: $font-family-serif;
+    }
 }
 
 h2 {

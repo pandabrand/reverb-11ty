@@ -1,0 +1,11 @@
+<div class="embla" id="embla">
+  <div class="embla__container">
+    {% for item in artists %}
+      <div class="embla__slide">
+        <img src="{{ item.img }}" width="341" height="210" alt="" srcset="{{ item.srcSet }}">
+        {{ item.title }}
+        <a href="{{ item.uri }}">View Curated Guide</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -18,12 +18,24 @@
 @import 'base/fonts';
 @import 'base/normalize';
 @import 'base/reboot';
+@import 'base/elements';
 @import 'base/layout';
 @import 'base/typography';
 @import 'base/focus';
+@import 'base/carousel';
 @import 'base/utilities';
 @import 'base/screenreader';
 @import 'base/animation';
+
+//--------------------
+// OBJECTS
+// partials defining undecorated design patterns
+//--------------------
+
+@import 'objects/cards';
+@import 'objects/guide';
+@import 'objects/lists';
+@import 'objects/hero';
 
 //--------------------
 // COMPONENTS
@@ -34,3 +46,5 @@
 @import 'components/nav';
 @import 'components/footer';
 @import 'components/icon';
+@import 'components/about';
+@import 'components/home';

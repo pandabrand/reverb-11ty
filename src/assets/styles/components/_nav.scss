@@ -4,7 +4,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        background-color: #fff;
+        background-color: #000;
     }
     &__link {
         display: block;
@@ -12,22 +12,32 @@
     }
     &__toggle {
         @include button-reset;
+        padding: 0 0.5rem;
+        transform: translateY(50%);
     }
 
-    @include mq-down(lg) {
-        &.is-open &__menu {
-            display: block;
-        }
+    &.is-open &__menu {
+        display: block;
     }
 
-    @include mq(lg) {
-        &__toggle {
-            display: none;
-        }
-        &__menu {
-            display: flex;
-            position: static;
-            background-color: transparent;
-        }
+    &__btn {
+        background-color: $brand-teal;
+        color: #000;
+        text-align: center;
+        text-transform: uppercase;
+        display: inline-flex;
+        flex-direction: column;
+        margin-top: -0.5rem;
+        padding: 1rem 1.25rem;
+        line-height: 1;
+        text-decoration: none;
+    }
+
+    &__cta {
+        font-family: $font-family-serif;
+    }
+
+    &__label {
+        font-weight: 300;
     }
 }

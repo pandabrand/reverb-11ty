@@ -1,0 +1,23 @@
+.guide-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 5rem;
+
+  .map-container,
+  .location-container {
+    width: 100%;
+    flex: 50%
+  }
+  
+  #map {
+    height: 80vh;
+  }
+  
+  .location-container {
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #1c1c1c;
+    padding: 2rem;
+  }
+}

@@ -1,9 +1,27 @@
 .header {
-    padding: $spacing-y 0;
+    padding: 0.5rem 0 $spacing-y;
 
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__left {
+        display: flex;
+    }
+
+    &__address {
+        padding-top: 0.5rem;
+    }
+
+    &__title {
+        font-family: $font-family-serif;
+        line-height: 1.225;
+    }
+    
+    &__subtitle {
+        font-size: 0.75rem;
+        line-height: 1.225;
     }
 }
