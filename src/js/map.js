@@ -20,11 +20,6 @@ if(map) {
     // document.querySelector('*').removeClass('img-icon-anim');
     // loadMarker(_id);
     scrollToElm( container, scrollItem, 1 );
-    // container.scroll({
-    //   top: scrollItem.offsetTop - (container.offsetTop + container.scrollTop),
-    //   left: 0,
-    //   behavior: "smooth"
-    // });
     // container.animate({
     //   scrollTop: scrollItem.offsetTop - container.offsetTop + container.scrollTop,
     // }, 2000, function() {

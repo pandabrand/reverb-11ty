@@ -3,7 +3,7 @@ const { request, gql } = require('graphql-request');
 module.exports = async function() {
   const query = gql`
     {
-      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "47336"}}}) {
+      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "48142"}}}) {
         nodes {
           vibe_managerId
           uri
@@ -18,7 +18,7 @@ module.exports = async function() {
         }
       }
 
-      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "47336"}}}, first: 3) {
+      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "48142"}}}, first: 3) {
         nodes {
           artistId
           content
@@ -33,7 +33,7 @@ module.exports = async function() {
         }
       }
 
-      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: "47336"}}}) {
+      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: "48142"}}}) {
         nodes {
           locationId
           title

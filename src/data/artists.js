@@ -3,7 +3,7 @@ const { request, gql } = require('graphql-request');
 module.exports = async function() {
   const query = gql`
     {
-      artists(where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: "46879"}}}) {
+      artists(where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: "48142"}}}) {
         nodes {
           artistId
           title
