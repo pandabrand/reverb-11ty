@@ -22,31 +22,4 @@
   let map = L.mapbox.map('map')
       .setView([-0.0005, 51.528308], 15) 
       .addLayer(L.mapbox.styleLayer('mapbox://styles/pandabrand/cke658mxf0q2q19qazrvo1gdy'));
-
-  let markers = L.featureGroup();
-  locations.map((location) => {
-    console.log(location);
-    const marker_place = L.marker(location.coordinates, {icon:l_icon, riseOnHover:true, riseOffset: 3000});
-    marker_place.bindPopup('<div class="cc-marker__popup"><div class="font-weight-bold">'+location.title+'</div></div>');
-    markers.addLayer(marker_place);
-    let query_id = '#'+ location.id;
-    //document.querySelector( query_id ).dataset.ccMarker = markers.getLayerId(marker_place);
-    marker_place.addEventListener('click', scrollToDetail);
-  })
-  markers.addTo(map);
-  map.fitBounds( markers.getBounds(), [50, 50] );
-function scrollToDetail() {
-  console.log( this );
-  // Waypoint.disableAll();
-  // var _id = this._leaflet_id;
-  // var scrollItem = jQuery('[data-cc-marker="'+_id+'"]');
-  // var container = jQuery('.travel__detail__map__list');
-  // jQuery('*').removeClass('img-icon-anim');
-  // loadMarker(_id);
-  // container.animate({
-  //   scrollTop: scrollItem.offset().top - container.offset().top + container.scrollTop(),
-  // }, 2000, function() {
-  //   Waypoint.enableAll();
-  // });
-}
 </script>
