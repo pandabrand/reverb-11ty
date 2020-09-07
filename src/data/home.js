@@ -4,7 +4,7 @@ module.exports = async function() {
 
   const query = gql`
     query cityQuery($cityId: String!, $cityPost: ID!) {
-      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}) {
+      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}, status: PRIVATE}) {
         nodes {
           vibe_managerId
           uri
@@ -19,7 +19,7 @@ module.exports = async function() {
         }
       }
 
-      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}, first: 3) {
+      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}, status: PRIVATE}, first: 3) {
         nodes {
           artistId
           content
@@ -34,7 +34,7 @@ module.exports = async function() {
         }
       }
 
-      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: $cityId}}}) {
+      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: $cityId}}, status: PRIVATE}) {
         nodes {
           databaseId
           title

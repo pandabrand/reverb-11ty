@@ -3,7 +3,7 @@ const { request, gql } = require('graphql-request');
 module.exports = async function() {
   const query = gql`
     query artistQuery($cityId: String!) {
-      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: $cityId}}}) {
+      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: $cityId}}, status: PRIVATE}) {
         nodes {
           databaseId
           title
