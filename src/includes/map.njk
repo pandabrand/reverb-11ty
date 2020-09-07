@@ -1,25 +1,40 @@
-<div id="map"></div>
+<div class="map-container">
+  <div id="map">
+  </div>
+</div>
 <script>
+  const api = '{{ env.mapbox_token }}';
   const locations = [
     {% for item in home.locations %}
       {
-        'coordinates': [{{ item.latitude }}, {{ item.longitude }}],
+        'coordinates': [{{ item.longitude }},{{ item.latitude }}],
         'title': '{{item.title}}',
-        'id': '{{ item.locationId }}'
+        'id': '{{ item.locationId }}',
+        'address': '{{ item.address }}',
       },
     {% endfor %}
   ];
-
-  let l_icon = L.divIcon({
-    html: '<div class="cc-map-marker"><img class="img-fluid" src="{{ "/assets/images/map_icon@2x.png" | url }}" width="34" height="50" /></div>',
-    iconSize: [34,50],
-    iconAnchor: [18,49],
-    popupAnchor: [0, -26]
-  });
-
-  //center: [-84.391024, 33.761738], // starting position [lng, lat] Atlanta
-  L.mapbox.accessToken = '{{ env.mapbox_token }}';
-  let map = L.mapbox.map('map')
-      .setView([-0.0005, 51.528308], 15) 
-      .addLayer(L.mapbox.styleLayer('mapbox://styles/pandabrand/cke658mxf0q2q19qazrvo1gdy'));
+  
+  const geojson = {
+    type: 'FeatureCollection',
+    features: [
+      {% for item in home.locations %}
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: {
+              lng: {{ item.longitude }},
+              lat: {{ item.latitude }}
+            },
+          },
+          properties: {
+            title: '{{item.title}}',
+            id: '{{ item.locationId }}',
+            address: '{{ item.address }}',
+          }
+        },
+      {% endfor %}
+    ]
+  };
 </script>

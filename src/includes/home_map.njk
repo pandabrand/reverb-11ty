@@ -1,21 +1,6 @@
 <h1><span class="top-line">Area Guide</span><br>Downtown Atlanta</h1>
 <div class="guide-container">
-  <div class="map-container">
-    {% include "map.njk" %}
-  </div>
-  <div class="location-container">
-    {% for item in home.locations %}
-      <div id="{{ item.locationId }}" class="card location">
-        <div class="img-container">
-          {% imagehandler item.img, item.imgSrcSet, item.instagramImage %}
-        </div>
-        <div class="body">
-          <h2>{{ item.title }}</h2>
-          <address>{{ item.address }}</address>
-          <div class="links"><a href="{{ item.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ item.longitude }},{{ item.latitude }}" rel="external" target="_blank">Directions</a></div>
-          <div>{{ item.excerpt | safe | truncate(100) }}</div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+  {% include "map.njk" %}
+  {% set locations = home.locations %}  
+  {% include "locations.njk" %}
 </div>

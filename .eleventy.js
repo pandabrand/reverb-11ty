@@ -7,6 +7,7 @@ const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
 const image_handler = require('./utils/image_handler.js')
+const obj_image_handler = require('./utils/location_image_handler.js')
 const debug = require('debug')('reverb');
 
 require('dotenv').config();
@@ -36,6 +37,9 @@ module.exports = function (config) {
 
     // Image Handler
     config.addNunjucksAsyncShortcode('imagehandler', image_handler)
+
+    // Object Image Handler
+    config.addNunjucksAsyncShortcode('objimagehandler', obj_image_handler)
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')

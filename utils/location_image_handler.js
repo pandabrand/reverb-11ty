@@ -1,10 +1,10 @@
 const fetch = require('node-fetch');
 const pattern = /^https?:\/\/www.instagram.com\/p\/[0-9a-zA-Z-_]*\//g;
 
-module.exports = async ( src, srcSet, instagramURL ) => {
-  let itemSrcSet = (typeof srcSet !== 'undefined' ) ? `srcset="${ srcSet }"` : '';
-  let itemSrc = (typeof src !== 'undefined') ? `src="${ src }"` : '';
-  const url = instagramURL.match( pattern );
+module.exports = async ( location ) => {
+  let itemSrc = location.featuredImage && `src="${ location.featuredImage.node.sourceUrl }"`;
+  let itemSrcSet = location.featuredImage && `srcset="${ location.featuredImage.node.srcSet }"`;
+  const url = location.locationFieldGroup.instagramImage && location.locationFieldGroup.instagramImage.match( pattern );
 
   if( url ) {
     const params = new URLSearchParams();

@@ -5,30 +5,47 @@
 
   .map-container,
   .location-container {
+    position: relative;
     width: 100%;
-    flex: 50%
+    flex: 50%;
+    height: 80vh;
+    padding: 2rem;
   }
   
   #map {
-    height: 80vh;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+    left: 2rem;
   }
   
   .location-container {
-    height: 85vh;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #1c1c1c;
-    padding: 2rem;
   }
 
   .map-container {
     margin-left: 2rem;
-    padding: 2rem;
     background-color: #ffffff;
   }
+}
 
-  .leaflet-div-icon {
-    background: transparent;
-    border: none;
-  }
+.marker {
+  background-image: url(../images/map_icon@2x.png);
+  background-size: cover;
+  width: 34px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: $font-family-sans-serif;
+  color: #1c1c1c;
 }

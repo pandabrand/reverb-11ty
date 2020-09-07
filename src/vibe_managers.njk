@@ -1,0 +1,40 @@
+---
+layout: base
+pagination:
+  data: vibe_managers
+  size: 1
+  alias: vibe_manager
+permalink: "{{ vibe_manager.uri }}"
+---
+<div class="container artist">
+  <div class="hero">
+    <img src="{{ vibe_manager.img }}" srcset="{{ vibe_manager.srcSet }}" alt="" class="img-fluid">
+    <h1 aria-role="title"><span class="top-line">Your Vibe Manager</span><br>{{ vibe_manager.title }}</h1>
+  </div>
+  <section class="intro">
+    <div class="body">
+      {{ vibe_manager.content | safe }}
+    </div>
+  </section>
+  <div class="guide-container">
+    {% include "vibe_map.njk" %}
+    {% set locations = vibe_manager.locations %}
+    <div class="location-container">
+      {% for item in locations %}
+        {% for locationitem in item.location %}
+          <div id="{{ locationitem.databaseId }}" class="card location" data-lng="{{ locationitem.locationFieldGroup.address.longitude }}" data-lat="{{ locationitem.locationFieldGroup.address.latitude }}">
+            <div class="img-container">
+              {% objimagehandler locationitem %}
+            </div>
+            <div class="body">
+              <h2>{{ locationitem.title }}</h2>
+              <address>{{ locationitem.locationFieldGroup.address.streetAaddress }}</address>
+              <div class="links"><a href="{{ locationitem.locationFieldGroup.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ locationitem.locationFieldGroup.address.longitude }},{{ locationitem.locationFieldGroup.address.latitude }}" rel="external" target="_blank">Directions</a></div>
+              <div>{{ locationitem.content | safe | truncate(100) }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

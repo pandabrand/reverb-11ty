@@ -1,0 +1,40 @@
+---
+layout: base
+pagination:
+  data: artists
+  size: 1
+  alias: artist
+permalink: "{{ artist.uri }}"
+---
+<div class="container artist">
+  <div class="hero">
+    <img src="{{ artist.img }}" srcset="{{ artist.srcSet }}" alt="" class="img-fluid">
+    <h1 aria-role="title"><span class="top-line">Explore With</span><br>{{ artist.title }}</h1>
+  </div>
+  <section class="intro">
+    <div class="body">
+      {{ artist.content | safe }}
+    </div>
+  </section>
+  <div class="guide-container">
+    {% include "artist_map.njk" %}
+    {% set locations = artist.locations %}
+    <div class="location-container">
+      {% for item in locations %}
+        {% for locationitem in item.location %}
+          <div id="{{ locationitem.databaseId }}" class="card location" data-lng="{{ locationitem.locationFieldGroup.address.longitude }}" data-lat="{{ locationitem.locationFieldGroup.address.latitude }}">
+            <div class="img-container">
+              {% objimagehandler locationitem %}
+            </div>
+            <div class="body">
+              <h2>{{ locationitem.title }}</h2>
+              <address>{{ locationitem.locationFieldGroup.address.streetAaddress }}</address>
+              <div class="links"><a href="{{ locationitem.locationFieldGroup.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ locationitem.locationFieldGroup.address.longitude }},{{ locationitem.locationFieldGroup.address.latitude }}" rel="external" target="_blank">Directions</a></div>
+              <div>{{ locationitem.content | safe | truncate(100) }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="map-container">
+  <div id="map">
+  </div>
+</div>
+<script>
+  const api = '{{ env.mapbox_token }}';
+  const geojson = {
+    type: 'FeatureCollection',
+    features: [
+      {% for locations in artist.locations %}
+        {% for item in locations.location %}
+          {
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates: {
+                lng: {{ item.locationFieldGroup.address.longitude }},
+                lat: {{ item.locationFieldGroup.address.latitude }}
+              },
+            },
+            properties: {
+              title: '{{item.title}}',
+              id: '{{ item.databaseId }}',
+              address: '{{ item.locationFieldGroup.address.streetAddress }}',
+            }
+          },
+        {% endfor %}
+      {% endfor %}
+    ]
+  };
+</script>

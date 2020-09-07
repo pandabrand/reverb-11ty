@@ -1,9 +1,10 @@
 const { request, gql } = require('graphql-request');
 
 module.exports = async function() {
+
   const query = gql`
-    {
-      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "48142"}}}) {
+    query cityQuery($cityId: String!, $cityPost: ID!) {
+      vibe_managers(first: 1, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}) {
         nodes {
           vibe_managerId
           uri
@@ -18,7 +19,7 @@ module.exports = async function() {
         }
       }
 
-      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: "48142"}}}, first: 3) {
+      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}, first: 3) {
         nodes {
           artistId
           content
@@ -33,9 +34,9 @@ module.exports = async function() {
         }
       }
 
-      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: "48142"}}}) {
+      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: $cityId}}}) {
         nodes {
-          locationId
+          databaseId
           title
           excerpt
           featuredImage {
@@ -45,7 +46,6 @@ module.exports = async function() {
             }
           }
           locationFieldGroup {
-            instagramUrl
             address {
               streetAddress
               longitude
@@ -56,11 +56,26 @@ module.exports = async function() {
             photoCredit
           }
         }
+      }
+      city(id: $cityPost, idType: DATABASE_ID) {
+        cityFieldGroup {
+          cityLocation {
+            latitude
+            longitude
+          }
+        }
       }    
     }
   `;
+
+  const variables = {
+    cityId: process.env.CITY_ID,
+    cityPost: process.env.CITY_ID,
+  }
+
+  const data = await request(process.env.GRAPHQL_ENDPOINT, query, variables);
+  const city = data.city;
   
-  const data = await request(process.env.GRAPHQL_ENDPOINT, query);
   const artists = data.artists.nodes.map((item) => {
     return {
       id: item.artistId,
@@ -84,20 +99,18 @@ module.exports = async function() {
   });
 
   const locations = data.locations.nodes.map((item) => {
-    let srcset = (item.featuredImage) ? item.featuredImage.node.srcSet : '';
-    let src = (item.featuredImage) ? item.featuredImage.node.sourceUrl : '';
-    let instaUrl = item.locationFieldGroup.instagramUrl || '';
-    let instaImg = item.locationFieldGroup.instagramImage || '';
+    let srcset = item.featuredImage && item.featuredImage.node.srcSet;
+    let src = item.featuredImage && item.featuredImage.node.sourceUrl;
+    let instagramImage = item.locationFieldGroup.instagramImage || '';
     let photoCredit = item.locationFieldGroup.photoCredit || '';
 
     return {
-      locationId: item.locationId,
+      locationId: item.databaseId,
       title: item.title,
       excerpt: item.excerpt,
       img: src,
       imgSrcSet: srcset,
-      instagramUrl: instaUrl,
-      instagramImage: instaImg,
+      instagramImage: instagramImage,
       website: item.locationFieldGroup.website,
       photoCredit: photoCredit,
       address: item.locationFieldGroup.address.streetAddress,
@@ -109,6 +122,7 @@ module.exports = async function() {
   return {
     'artists': artists,
     'vibe_managers': vibes,
-    'locations': locations
+    'locations': locations,
+    'city': city,
   };
 }
