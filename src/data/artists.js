@@ -38,6 +38,7 @@ module.exports = async function() {
                     instagramImage
                   }
                   content
+                  excerpt
                   title
                 }
               }
@@ -59,6 +60,7 @@ module.exports = async function() {
       id: item.databaseId,
       title: item.title,
       content: item.content,
+      excerpt: item.excerpt,
       uri: item.uri,
       img: item.featuredImage.node.sourceUrl,
       imgSrcSet: item.featuredImage.node.srcSet,

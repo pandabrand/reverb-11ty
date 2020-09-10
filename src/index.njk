@@ -15,7 +15,7 @@ eleventyNavigation:
       <div class="card">
         <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
         <h2>{{ item.title }}</h2>
-        <div class="body">{{ item.content | safe | truncate(200) }}</div>
+        <div class="body">{{ item.excerpt | safe }}</div>
         <a href="{{ item.uri }}">+ Meet Artists</a>
       </div>
     {% endfor %}    
@@ -23,7 +23,7 @@ eleventyNavigation:
       <div class="card">
         <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
         <h2>{{ item.title }}</h2>
-        <div>{{ item.content | safe | truncate(200) }}</div>
+        <div>{{ item.excerpt | safe }}</div>
         <a href="{{ item.uri }}">+ Meet Artists</a>
       </div>
     {% endfor %}    
