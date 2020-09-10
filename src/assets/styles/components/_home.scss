@@ -4,4 +4,12 @@
       margin-bottom: 6rem;
     }
   }
+
+  .card {
+    .body {
+      a {
+        display: none;
+      }
+    }
+  }
 }
