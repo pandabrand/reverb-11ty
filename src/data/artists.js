@@ -11,8 +11,8 @@ module.exports = async function() {
           uri
           featuredImage {
             node {
-              sourceUrl(size: FRONT_PAGE_IMAGE)
-              srcSet(size: FRONT_PAGE_IMAGE)
+              sourceUrl(size: FRONT_PAGE_REVERB)
+              srcSet(size: FRONT_PAGE_REVERB)
             }
           }
           artistFieldGroup {

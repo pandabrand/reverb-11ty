@@ -27,8 +27,8 @@ module.exports = async function() {
           title
           featuredImage {
             node {
-              sourceUrl(size: FRONT_PAGE_IMAGE)
-              srcSet(size: FRONT_PAGE_IMAGE)
+              sourceUrl(size: LARGE_FEATURE)
+              srcSet(size: LARGE_FEATURE)
             }
           }
         }
