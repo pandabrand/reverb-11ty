@@ -19,22 +19,7 @@ module.exports = async function() {
         }
       }
 
-      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}, first: 3) {
-        nodes {
-          databaseId
-          excerpt
-          uri
-          title
-          featuredImage {
-            node {
-              sourceUrl(size: FRONT_PAGE_IMAGE)
-              srcSet(size: FRONT_PAGE_IMAGE)
-            }
-          }
-        }
-      }
-
-      vibe_managers(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}, first: 1) {
+      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}}, first: 4) {
         nodes {
           databaseId
           excerpt
@@ -102,17 +87,6 @@ module.exports = async function() {
     };
   });
 
-  const vibes = data.vibe_managers.nodes.map((item) => {
-    return {
-      id: item.databaseId,
-      title: item.title,
-      uri: item.uri,
-      img: item.featuredImage.node.sourceUrl,
-      imgSrcSet: item.featuredImage.node.srcSet,
-      excerpt: item.excerpt
-    };
-  });
-
   const locations = data.locations.nodes.map((item) => {
     let srcset = item.featuredImage && item.featuredImage.node.srcSet;
     let src = item.featuredImage && item.featuredImage.node.sourceUrl;
@@ -136,7 +110,6 @@ module.exports = async function() {
 
   return {
     'artists': artists,
-    'vibe_managers': vibes,
     'locations': locations,
     'city': city,
   };
