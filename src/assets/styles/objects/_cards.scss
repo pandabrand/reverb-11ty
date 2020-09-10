@@ -9,6 +9,15 @@
 .card {
   width: 272px;
 
+  &.column {
+    display: flex;
+    flex-direction: column;
+
+    .column-link {
+      margin-top: auto;
+    }
+  }
+  
   h2 {
     font-family: $font-family-serif;
     font-size: 1.2rem;

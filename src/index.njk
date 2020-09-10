@@ -12,11 +12,11 @@ eleventyNavigation:
   <h1><span class="top-line">The Artists</span><br>Behind the Guide</h1>
   <div class="card-row">
     {% for item in home.artists %}
-      <div class="card">
+      <div class="card column">
         <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
         <h2>{{ item.title }}</h2>
         <div class="body">{{ item.excerpt | safe }}</div>
-        <a href="{{ item.uri }}">+ Meet Artists</a>
+        <a href="{{ item.uri }}" class="column-link">+ Meet Artists</a>
       </div>
     {% endfor %}    
   </div>
