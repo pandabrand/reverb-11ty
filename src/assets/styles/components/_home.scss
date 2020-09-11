@@ -9,7 +9,7 @@
     .body {
       a {
         display: none;
-        
+
         &.show {
           display: inline;
         }
@@ -17,7 +17,7 @@
 
       .links {
         a {
-          display: block;
+          display: inline;
         }
       }
     }
