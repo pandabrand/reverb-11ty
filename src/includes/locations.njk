@@ -8,7 +8,7 @@
         <h2>{{ item.title }}</h2>
         <address>{{ item.address }}</address>
         <div class="links"><a href="{{ item.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ item.longitude }},{{ item.latitude }}" rel="external" target="_blank">Directions</a></div>
-        <div>{{ item.content | safe  }}</div>
+        <div>{{ item.excerpt | safe  }}</div>
       </div>
     </div>
   {% endfor %}
