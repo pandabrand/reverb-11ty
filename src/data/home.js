@@ -39,6 +39,7 @@ module.exports = async function() {
           databaseId
           title
           excerpt
+          content
           featuredImage {
             node {
               sourceUrl(size: LARGE_FEATURE)
@@ -97,6 +98,7 @@ module.exports = async function() {
       locationId: item.databaseId,
       title: item.title,
       excerpt: item.excerpt,
+      content: item.content,
       img: src,
       imgSrcSet: srcset,
       instagramImage: instagramImage,
