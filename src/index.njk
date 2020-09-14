@@ -13,7 +13,7 @@ eleventyNavigation:
   <div class="card-row">
     {% for item in home.artists %}
       <div class="card column">
-        <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217">
+        <img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover border" width="272" height="217">
         <h2>{{ item.title }}</h2>
         <div class="body">{{ item.excerpt | safe }}</div>
         <a href="{{ item.uri }}" class="column-link">+ Meet Artists</a>

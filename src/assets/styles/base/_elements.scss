@@ -17,4 +17,8 @@ img {
     object-fit: cover;
     object-position: center top;
   }
+
+  &.border {
+    border: $brand-teal 5px solid;
+  }
 }
