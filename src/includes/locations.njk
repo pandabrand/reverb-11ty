@@ -1,14 +1,14 @@
 <div class="location-container">
   {% for item in locations %}
-    <div id="{{ item.locationId }}" class="card location" data-lng="{{ item.longitude }}" data-lat="{{ item.latitude }}">
+    <div id="{{ item.databaseId }}" class="card location" data-lng="{{ item.longitude }}" data-lat="{{ item.latitude }}">
       <div class="img-container">
         {% imagehandler item.img, item.imgSrcSet, item.instagramImage %}
       </div>
       <div class="body">
         <h2>{{ item.title }}</h2>
         <address>{{ item.address }}</address>
-        <div class="links"><a class="show" href="{{ item.website }}">Website</a> | <a class="show" href="https://www.google.com/maps/dir/?api=1&destination={{ item.longitude }},{{ item.latitude }}" rel="external" target="_blank">Directions</a> | <a class="show" href="{{ item.instagramUrl }}">Instagram</a></div>
-        <div>{{ item.excerpt | safe  }}</div>
+        <div class="links"><a class="show" href="{{ item.website }}">Website</a> | <a class="show" href="https://www.google.com/maps/dir/?api=1&destination={{ item.longitude }},{{ item.latitude }}" rel="external" target="_blank">Directions</a> | <a class="show" href="{{ item.instagramUrl }}" rel="external" target="_blank">Instagram</a></div>
+        <div>{{ item.content | safe }}</div>
       </div>
     </div>
   {% endfor %}

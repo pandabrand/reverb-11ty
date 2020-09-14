@@ -1,4 +1,5 @@
 const { request, gql } = require('graphql-request');
+const smartquotes = require('smartquotes');
 
 module.exports = async function() {
 
@@ -97,10 +98,10 @@ module.exports = async function() {
     let photoCredit = item.locationFieldGroup.photoCredit || '';
 
     return {
-      locationId: item.databaseId,
+      databaseId: item.databaseId,
       title: item.title,
       excerpt: item.excerpt,
-      content: item.content,
+      content: smartquotes(item.content),
       img: src,
       imgSrcSet: srcset,
       instagramImage: instagramImage,
