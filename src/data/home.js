@@ -54,6 +54,7 @@ module.exports = async function() {
             }
             website
             instagramImage
+            instagramUrl
             photoCredit
           }
         }
@@ -92,6 +93,7 @@ module.exports = async function() {
     let srcset = item.featuredImage && item.featuredImage.node.srcSet;
     let src = item.featuredImage && item.featuredImage.node.sourceUrl;
     let instagramImage = item.locationFieldGroup.instagramImage || '';
+    let instagramUrl = item.locationFieldGroup.instagramUrl || '';
     let photoCredit = item.locationFieldGroup.photoCredit || '';
 
     return {
@@ -102,6 +104,7 @@ module.exports = async function() {
       img: src,
       imgSrcSet: srcset,
       instagramImage: instagramImage,
+      instagramUrl: instagramUrl,
       website: item.locationFieldGroup.website,
       photoCredit: photoCredit,
       address: item.locationFieldGroup.address.streetAddress,

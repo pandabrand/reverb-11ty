@@ -29,7 +29,7 @@ permalink: "{{ artist.uri }}"
             <div class="body">
               <h2>{{ locationitem.title }}</h2>
               <address>{{ locationitem.locationFieldGroup.address.streetAaddress }}</address>
-              <div class="links"><a href="{{ locationitem.locationFieldGroup.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ locationitem.locationFieldGroup.address.longitude }},{{ locationitem.locationFieldGroup.address.latitude }}" rel="external" target="_blank">Directions</a></div>
+              <div class="links"><a href="{{ locationitem.locationFieldGroup.website }}">Website</a> | <a href="https://www.google.com/maps/dir/?api=1&destination={{ locationitem.locationFieldGroup.address.longitude }},{{ locationitem.locationFieldGroup.address.latitude }}" rel="external" target="_blank">Directions</a> | <a href="{{ locationitem.locationFieldGroup.instagramUrl }}">Instagram</a></div>
               <div>{{ locationitem.content | safe }}</div>
             </div>
           </div>

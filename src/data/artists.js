@@ -36,6 +36,7 @@ module.exports = async function() {
                     website
                     photoCredit
                     instagramImage
+                    instagramUrl
                   }
                   content
                   excerpt
