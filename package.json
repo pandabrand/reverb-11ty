@@ -43,6 +43,7 @@
     "memfs": "^3.1.2",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
+    "scrollmagic": "^2.0.7",
     "smartquotes": "^2.3.1",
     "svg-sprite": "^1.5.0",
     "waypoints": "^4.0.1",

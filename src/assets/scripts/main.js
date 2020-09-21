@@ -7,3 +7,4 @@ require('smartquotes');
 // Internal Modules
 import './modules/nav'
 import './modules/carousel'
+import './modules/scroll'

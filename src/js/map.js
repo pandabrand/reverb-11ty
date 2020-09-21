@@ -13,7 +13,8 @@ if(map) {
     },
     style: 'mapbox://styles/pandabrand/cke658mxf0q2q19qazrvo1gdy'
   });
-
+  map.scrollZoom.disable();
+  
   geojson.features.map((location) => {
     let markerEl = document.createElement('div');
     markerEl.className = 'cc-map-marker marker';

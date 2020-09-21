@@ -5,6 +5,8 @@
         left: 0;
         right: 0;
         background-color: #000;
+        height: 100vh;
+        z-index: 1050;
     }
     &__link {
         display: block;

@@ -1,6 +1,10 @@
 .header {
     padding: 0.5rem 0 $spacing-y;
 
+    @include mq-down(lg) {
+        padding-bottom: 0;
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;

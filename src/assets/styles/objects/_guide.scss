@@ -3,6 +3,10 @@
   flex-direction: row-reverse;
   margin-bottom: 5rem;
 
+  @include mq-down(lg) {
+    flex-direction: column;
+  }
+
   .map-container,
   .location-container {
     position: relative;
@@ -10,6 +14,14 @@
     flex: 50%;
     height: 80vh;
     padding: 2rem;
+    
+    @include mq-down(lg) {
+      position: relative;
+      flex: 1 auto;
+      height: 45vh;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
   }
   
   #map {
@@ -18,17 +30,34 @@
     right: 2rem;
     bottom: 2rem;
     left: 2rem;
+    
+    @include mq-down(lg) {
+      top: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      left: 1rem;
+    }
   }
   
   .location-container {
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #1c1c1c;
+    
+    @include mq-down(lg) {
+      background-color: #000000;
+      height: auto;
+    }
   }
 
   .map-container {
     margin-left: 2rem;
     background-color: #ffffff;
+
+    @include mq-down(lg) {
+      margin-left: 0;
+      z-index: 1050;
+    }
   }
 }
 
@@ -48,4 +77,9 @@
   text-align: center;
   font-family: $font-family-sans-serif;
   color: #1c1c1c;
+}
+
+.stuck {
+  position: fixed;
+  top: 0;
 }

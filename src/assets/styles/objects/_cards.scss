@@ -4,6 +4,13 @@
   justify-content: space-between;
   align-content: space-between;
   margin-bottom: 10rem;
+
+  @include mq-down(lg) {
+    display: flex;
+    flex-direction: unset;
+    justify-content: unset;
+    align-content: unset;
+  }
 }
 
 .card {
@@ -12,6 +19,9 @@
   &.column {
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
 
     .column-link {
       margin-top: auto;
