@@ -16,6 +16,6 @@ class ScrollPin {
   }
 }
 
-if(document.querySelector(SELECTORS.pin).length > 0) {
+if(document.querySelector(SELECTORS.pin)) {
   new ScrollPin()
 }
