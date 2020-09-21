@@ -9,10 +9,24 @@ const SELECTORS = {
 class ScrollPin {
   constructor() {
     this.controller = new ScrollMagic.Controller()
-    this.scene = new ScrollMagic.Scene({ triggerElement: SELECTORS.trigger, triggerHook: 'onLeave' })
-      .setPin(SELECTORS.pin, {spacerClass: SELECTORS.spacer})
-      .addTo(this.controller);
-      console.log(this.scene);
+    
+    if( window.innerWidth < 768 ) {
+        this.scene = new ScrollMagic.Scene({ triggerElement: SELECTORS.trigger, triggerHook: 'onLeave' })
+          .setPin(SELECTORS.pin, {spacerClass: SELECTORS.spacer});
+        this.scene.addTo( this.controller );
+      }
+
+      window.addEventListener('resize', () => this.togglePin());
+  }
+
+  togglePin() {
+    if( window.innerWidth > 768 ) {
+      this.controller.destroy( this.scene );
+    } else if(window.innerWidth < 768 ) {
+      this.scene = new ScrollMagic.Scene({ triggerElement: SELECTORS.trigger, triggerHook: 'onLeave' })
+        .setPin(SELECTORS.pin, {spacerClass: SELECTORS.spacer});
+      this.scene.addTo( this.controller );
+    }
   }
 }
 

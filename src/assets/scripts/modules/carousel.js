@@ -2,7 +2,7 @@ import EmblaCarousel from 'embla-carousel'
 const emblaNode = document.getElementById('embla');
 const emblaOptions = { dragFree: false, align: "start", slidesToScroll: 1 };
 const emblaHome = document.getElementById( 'home-carousel' );
-const emblaViewport = emblaHome.querySelector( '.embla__viewport' );
+const emblaViewport = (emblaHome) ? emblaHome.querySelector( '.embla__viewport' ) : false;
 let homeCarousel = {};
 
 if(emblaNode) {
