@@ -1,6 +1,15 @@
 <footer class="footer" role="contentinfo">
     <div class="footer__inner container">
-        <span>Copyright &copy; {{ build.timestamp | dateToFormat('yyyy') }} Reverb Hotels All rights reserved</span>
-        <div>REVERB HOTELS | LEGAL DISCLAIMER | PRIVACY POLICY | TERMS & CONDITIONS | ABOUT SOUNDTRACKS</div>
+        <div class="small-menu">
+            <div>Copyright &copy; {{ build.timestamp | dateToFormat('yyyy') }} Reverb Hotels All rights reserved</div>
+            <div class="social-links"><a href="https://www.facebook.com/OfficialReverbHotels/">{% include 'facebook-f.svg' %}</a><a href="https://www.instagram.com/reverb.hotels/">{% include 'instagram.svg' %}</a></div>
+        </div>
+        <ul class="large-menu">
+            <li><a href="https://www.reverbhotels.com">REVERB HOTELS</a></li>
+            <li><a href="https://www.hardrockhotels.com/legal-disclaimer">LEGAL DISCLAIMER</a></li>
+            <li><a href="https://www.hardrockhotels.com/privacy">PRIVACY POLICY</a></li>
+            <li><a href="https://www.hardrockhotels.com/terms">TERMS & CONDITIONS</a></li>
+            <li><a href="https://areaguides.hardrockhotels.com/about/">ABOUT SOUNDTRACKS</a></li>
+        </ul>
     </div>
 </footer>

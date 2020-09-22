@@ -7,5 +7,74 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 1rem;
+
+        .small-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex: auto;
+            
+            @include mq-down(lg) {
+                flex-direction: column;
+            }
+
+            .social-links {
+                display: inline;
+
+                a {
+                    padding-right: 1rem;
+
+                    &:last-of-type {
+                        padding: 0;
+                    }
+                }
+
+                svg {
+                    height: 28px;
+                    vertical-align: middle;
+
+                    &:first-of-type {
+                        fill: $text-color;
+                    }
+
+                    &:last-of-type {
+                        stroke: $text-color;
+                        stroke-width: 1rem;
+                    }
+                }
+            }
+        }
+        .large-menu {
+            flex: 1 55%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            @include mq-down(lg) {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            li {
+                border-right: 1px solid $text-color;
+                padding: 0 0.5rem;
+
+                @include mq-down(lg) {
+                    border-right: none;
+                    padding: 0;
+                }
+
+                &:last-of-type {
+                    border-right: none;
+                    padding-right: 0;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $text-color;
+            }
+        }
     }
 }
