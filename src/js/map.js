@@ -11,7 +11,8 @@ if(map) {
     fitBoundsOptions: {
       padding: {top: 50, bottom:50, left: 50, right: 50},
     },
-    style: 'mapbox://styles/pandabrand/cke658mxf0q2q19qazrvo1gdy'
+    // style: 'mapbox://styles/pandabrand/cke658mxf0q2q19qazrvo1gdy'
+    style: 'mapbox://styles/pandabrand/ckelgww4m04z719o6s8xidzsw'
   });
   map.scrollZoom.disable();
   

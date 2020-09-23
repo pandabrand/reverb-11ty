@@ -1,5 +1,5 @@
 .header {
-    padding: 0.5rem 0 $spacing-y;
+    padding: 0.5rem 0 0;
 
     @include mq-down(lg) {
         padding-bottom: 0;

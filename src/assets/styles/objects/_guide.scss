@@ -62,15 +62,15 @@
 }
 
 .marker {
-  background-image: url(../images/map_icon@2x.png);
+  background-image: url(../images/map-marker@2x.png);
   background-size: cover;
   filter: drop-shadow( -2px -1px 2px rgba( 0, 0, 0, 0.2 ) );
-  width: 34px;
+  width: 38px;
   height: 50px;
   cursor: pointer;
   
   &.pin {
-    background-image: url(../images/ReverbPin@2x.png);
+    background-image: url(../images/reverb-pin@2x.png);
   }
 }
 
