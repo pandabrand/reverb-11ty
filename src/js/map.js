@@ -17,7 +17,7 @@ if(map) {
   
   geojson.features.map((location) => {
     let markerEl = document.createElement('div');
-    markerEl.className = 'cc-map-marker marker';
+    markerEl.className = ( location.properties.id == 999999 ) ? 'cc-map-marker marker pin' : 'cc-map-marker marker';
     markerEl.dataset.locationId = location.properties.id;
     markerEl.addEventListener('click', scrollToDetail);
     new mapboxgl.Marker(markerEl)
