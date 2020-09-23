@@ -59,6 +59,19 @@
       z-index: 1050;
     }
   }
+  
+  .map-z {
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+  }
+
+  .map-trigger {
+    @include mq-down(lg) {
+      height: 1rem;
+      width: 100%;
+    }
+  }
 }
 
 .marker {
