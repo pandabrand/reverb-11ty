@@ -9,8 +9,8 @@ permalink: "{{ artist.uri }}"
 <div class="container artist">
   <div class="hero">
     <img src="{{ artist.img }}" srcset="{{ artist.srcSet }}" alt="" class="hero-img">
-    <h1 aria-role="title"><span class="top-line">Explore With</span><br>{{ artist.title }}</h1>
   </div>
+    <h1 aria-role="title"><span class="top-line">Explore With</span><br>{{ artist.title }}</h1>
   <section class="intro">
     <div class="body">
       {{ artist.content | safe }}

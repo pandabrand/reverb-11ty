@@ -22,6 +22,15 @@
     justify-content: start;
     align-items: start;
     height: 100%;
+    padding: 0 0.5rem;
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .cover {
+      max-width: 100%;
+    }
   }
   
   h2 {
@@ -29,12 +38,12 @@
     font-size: 1.2rem;
     font-weight: 400;
     margin-top: 1.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.2rem;
   }
 
   .body {
     font-size: 0.875rem;
-    margin-bottom: 1.9rem;
+    margin-bottom: 1rem;
   }
 
   &.location {
@@ -54,6 +63,13 @@
 
       h2 {
         margin-bottom: 0;
+        text-transform: uppercase;
+      }
+
+
+      .links {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
       }
     }
   }
