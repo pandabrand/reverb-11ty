@@ -3,4 +3,15 @@
     text-align: left;
     padding: 1rem;
   }
+
+  section {
+    .body {
+      display: flex;
+      flex-direction: row;
+      
+      @include mq-down(lg) {
+        flex-direction: column;
+      }
+    }
+  }
 }
