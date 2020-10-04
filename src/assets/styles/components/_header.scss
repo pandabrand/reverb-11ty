@@ -13,6 +13,20 @@
 
     &__left {
         display: flex;
+
+        .nav__btn {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__right {
+        .nav__btn {
+            padding: 1.5rem 1.25rem;
+            
+            @include mq-down(lg) {
+                padding: 1.6rem 1.25rem;
+            }
+        }
     }
 
     &__address {
