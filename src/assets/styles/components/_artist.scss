@@ -12,6 +12,10 @@
       @include mq-down(lg) {
         flex-direction: column;
       }
+
+      .right {
+        margin-left: 1.25rem;
+      }
     }
   }
 }
