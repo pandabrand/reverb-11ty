@@ -1,11 +1,15 @@
-<div class="embla" id="embla">
-  <div class="embla__container">
-    {% for item in artists %}
-      <div class="embla__slide">
-        <a href="{{ item.uri }}"><img src="{{ item.img }}" width="341" height="210" alt="" srcset="{{ item.srcSet }}"></a>
-        <h3>{{ item.title }}</h3>
-        <a href="{{ item.uri }}">View Curated Guide</a>
-      </div>
-    {% endfor %}
+<div class="embla" id="home-carousel">
+  <div class="embla__viewport">
+    <div class=" card-row embla__container">
+      {% for item in artists %}
+        <div class="embla__slide">
+          <div class="card column embla__slide__inner">
+            <a href="{{ item.uri }}"><img src="{{ item.img }}" width="272" height="217" class="cover" alt="" srcset="{{ item.srcSet }}"></a>
+            <h3>{{ item.title }}</h3>
+            <a href="{{ item.uri }}">View Curated Guide</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
