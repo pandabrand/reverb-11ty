@@ -7,7 +7,7 @@
       <div class="body">
         <h2>{{ item.title }}</h2>
         <address>{{ item.address }}</address>
-        <div class="links"><a class="show" href="{{ item.website }}">Website</a> | <a class="show" href="https://www.google.com/maps/dir/?api=1&destination={{ item.longitude }},{{ item.latitude }}" rel="external" target="_blank">Directions</a> | <a class="show" href="{{ item.instagramUrl }}" rel="external" target="_blank">Instagram</a></div>
+        <div class="links"><a class="show" href="{{ item.website }}">Website</a> | <a class="show" href="https://www.google.com/maps/dir/?api=1&destination={{ item.latitude }},{{ item.longitude }}" rel="external" target="_blank">Directions</a> | <a class="show" href="{{ item.instagramUrl }}" rel="external" target="_blank">Instagram</a></div>
         <div>{{ item.content | safe }}</div>
       </div>
     </div>

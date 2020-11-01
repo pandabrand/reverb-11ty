@@ -3,6 +3,10 @@
     padding: $spacing-y 0;
     background-color: $bg-color;
 
+    @include mq-down(md) {
+        font-size: 0.775rem;
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;
@@ -13,14 +17,18 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            flex: auto;
+            flex: 1 50%;
             
             @include mq-down(lg) {
                 flex-direction: column;
             }
-
+            
             .social-links {
                 display: inline;
+                
+                @include mq-down(lg) {
+                    margin-top: 1rem;
+                }
 
                 a {
                     padding-right: 1rem;
@@ -46,7 +54,7 @@
             }
         }
         .large-menu {
-            flex: 1 55%;
+            flex: 1 50%;
             display: flex;
             flex-direction: row;
             justify-content: flex-end;

@@ -11,6 +11,10 @@
     height: 500px;
     object-fit: cover;
     object-position: center top;
+
+    @include mq-down(lg) {
+      height: 250px;
+    }
   }
   
   &::after {

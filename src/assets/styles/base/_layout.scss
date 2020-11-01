@@ -31,6 +31,10 @@ body {
         .intro {
             margin: 3rem auto;
             padding: 1rem;
+
+            @include mq-down(lg) {
+                margin-top: 0;
+            }
         }
     }
 }
