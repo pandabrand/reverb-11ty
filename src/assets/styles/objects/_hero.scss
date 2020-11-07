@@ -36,5 +36,9 @@
     left: 0;
     transform: translateY(50%);
     z-index: 10;
+
+    @include mq-down(lg) {
+      transform: translateY(30%);
+    }
   }
 }
