@@ -19,6 +19,7 @@ h1 {
 
     @include mq-down(lg) {
         margin-bottom: 0.25rem;
+        font-size: 2rem;
     }
     
     .top-line {

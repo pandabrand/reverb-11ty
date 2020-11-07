@@ -10,8 +10,13 @@
     &__inner {
         display: flex;
         justify-content: space-between;
+        flex-direction: row;
         align-items: center;
         padding: 1rem;
+        
+        @include mq-down(lg) {
+            flex-direction: column-reverse;
+        }
 
         .small-menu {
             display: flex;
@@ -20,14 +25,17 @@
             flex: 1 50%;
             
             @include mq-down(lg) {
-                flex-direction: column;
+                flex-direction: column-reverse;
             }
             
             .social-links {
                 display: inline;
                 
                 @include mq-down(lg) {
-                    margin-top: 1rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
                 }
 
                 a {
@@ -61,16 +69,19 @@
 
             @include mq-down(lg) {
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: center;
             }
 
             li {
                 border-right: 1px solid $text-color;
                 padding: 0 0.5rem;
-
+                display: inline-flex;
+                justify-content: flex-start;
+                
                 @include mq-down(lg) {
+                    justify-content: center;
                     border-right: none;
-                    padding: 0;
+                    padding: 1rem 0;
                 }
 
                 &:last-of-type {
