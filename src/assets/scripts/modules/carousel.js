@@ -10,18 +10,15 @@ if(emblaNode) {
 }
 
 if( emblaViewport ) {
-  if( window.innerWidth < 768 ) {
-    homeCarousel = EmblaCarousel( emblaViewport, emblaOptions );
-    const prevBtn = emblaHome.querySelector(".embla__button--prev");
-    const nextBtn = emblaHome.querySelector(".embla__button--next");
-    const disablePrevAndNextBtns = disablePrevNextBtns( prevBtn, nextBtn, homeCarousel );
-    setupPrevNextBtns(prevBtn, nextBtn, homeCarousel);
+  homeCarousel = EmblaCarousel( emblaViewport, emblaOptions );
+  const prevBtn = emblaHome.querySelector(".embla__button--prev");
+  const nextBtn = emblaHome.querySelector(".embla__button--next");
+  const disablePrevAndNextBtns = disablePrevNextBtns( prevBtn, nextBtn, homeCarousel );
+  setupPrevNextBtns(prevBtn, nextBtn, homeCarousel);
 
-    homeCarousel.on('select', disablePrevAndNextBtns);
-    homeCarousel.on('init', disablePrevAndNextBtns);
-  }
+  homeCarousel.on('select', disablePrevAndNextBtns);
+  homeCarousel.on('init', disablePrevAndNextBtns);
   
-  window.addEventListener( 'resize', homeCarouselHandler );
 }
 
 function homeCarouselHandler() {
