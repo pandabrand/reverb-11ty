@@ -31,12 +31,7 @@
 }
 
 .embla__button {
-  display: none;
-  
-  @include mq-down(lg) {
-    display: inline-block;
-  }
-
+  display: inline-block;
   outline: 0;
   cursor: pointer;
   background-color: transparent;
