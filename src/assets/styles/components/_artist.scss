@@ -15,6 +15,11 @@
 
       .right {
         margin-left: 1.25rem;
+
+        p,
+        iframe {
+          width: 300px;
+        }
       }
     }
   }
