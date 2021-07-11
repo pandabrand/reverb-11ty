@@ -20,7 +20,7 @@ module.exports = async function() {
         }
       }
 
-      artists(where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}, orderby: {field: DATE, order: DESC}}) {
+      artists(first: 30, where: {metaQuery: {relation: AND, metaArray: {compare: LIKE, key: "artist_city", value: $cityId}}, orderby: {field: DATE, order: DESC}}) {
         nodes {
           databaseId
           excerpt
@@ -35,7 +35,7 @@ module.exports = async function() {
         }
       }
 
-      locations(where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: $cityId}}}) {
+      locations(first: 50, where: {metaQuery: {relation: AND, metaArray: {key: "location_city", compare: LIKE, value: $cityId}}}) {
         nodes {
           databaseId
           title

@@ -19,7 +19,7 @@ eleventyNavigation:
               <a href="{{ item.uri }}"><img src="{{ item.img }}" alt="" srcset="{{ item.imgSrcSet }}" class="cover" width="272" height="217"></a>
               <h2>{{ item.title }}</h2>
               <div class="body">{{ item.excerpt | safe }}</div>
-              <a href="{{ item.uri }}" class="column-link">+ Meet Artists</a>
+              <a href="{{ item.uri }}" class="column-link">+ Meet {{ item.title }}</a>
             </div>
           </div>
         {% endfor %}    
