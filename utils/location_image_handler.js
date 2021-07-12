@@ -25,6 +25,7 @@ module.exports = async ( location ) => {
     }
   }
 
-  return `<img ${itemSrc} alt="" ${itemSrcSet} class="card-image cover"/>`;
+  const fallbackSrc = itemSrc ? itemSrc : 'src="/assets/images/location-placeholder@2x.jpg"';
+  return `<img ${fallbackSrc} alt="" ${itemSrcSet} class="card-image cover"/>`;
 
 }

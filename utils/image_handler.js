@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
 const pattern = /^https?:\/\/www.instagram.com\/p\/[0-9a-zA-Z-_]*\//g;
+const Url = require('@11ty/eleventy/src/Filters/Url');
 
 module.exports = async ( src, srcSet, instagramURL ) => {
-  let itemSrcSet = (typeof srcSet !== 'undefined' ) ? `srcset="${ srcSet }"` : '';
-  let itemSrc = (typeof src !== 'undefined') ? `src="${ src }"` : '';
+  let itemSrcSet = (typeof srcSet !== 'undefined' ) ? srcSet : '';
+  let itemSrc = (typeof src !== 'undefined') ? src : '';
   const url = instagramURL.match( pattern );
 
   if( url ) {
@@ -20,11 +21,13 @@ module.exports = async ( src, srcSet, instagramURL ) => {
     const json = await response.json();
 
     if( json.thumbnail_url ) {
-      itemSrc = `src="${json.thumbnail_url}"`;
+      itemSrc = json.thumbnail_url;
       itemSrcSet = '';
     }
   }
 
-  return `<img ${itemSrc} alt="" ${itemSrcSet} class="card-image cover"/>`;
+  const newItemSrc = itemSrc ? itemSrc : '/assets/images/location-placeholder@2x.jpg';
+
+  return `<img src="${newItemSrc}" alt="" ${(itemSrcSet ? 'srcSet="'+itemSrcSet+'"' : '')} class="card-image cover"/>`;
 
 }
