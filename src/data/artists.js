@@ -1,9 +1,9 @@
 const { request, gql } = require('graphql-request');
 
-module.exports = async function() {
+module.exports = async function () {
   const query = gql`
     query artistQuery($cityId: String!) {
-      artists(first: 30, where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: $cityId}}}) {
+      artists(first: 70, where: {metaQuery: {relation: AND, metaArray: {key: "artist_city", compare: LIKE, value: $cityId}}}) {
         nodes {
           databaseId
           title
@@ -49,7 +49,7 @@ module.exports = async function() {
       }  
     }
   `;
-  
+
   const variables = {
     cityId: process.env.CITY_ID,
   }
